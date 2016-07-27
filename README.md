@@ -4,7 +4,7 @@ Minimalistic Go package to get application directories such as config and cache.
 
 Platform | Windows | [Linux/BSDs](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) | macOS
 -------- | ------- | ------------------------------------------------------------------------------------------ | -----
-User-specific config | `%APPDATA%` (`C:\Users\%USERNAME%\AppData\Roaming`) | `$HOME/Library/Application Support` | `$XDG_CONFIG_HOME` (`$HOME/.config`)
+User-specific config | `%APPDATA%` (`C:\Users\%USERNAME%\AppData\Roaming`) | `$XDG_CONFIG_HOME` (`$HOME/.config`) | `$HOME/Library/Application Support`
 User-specific cache | `%LOCALAPPDATA%` (`C:\Users\<User>\AppData\Local`) | `$XDG_CACHE_HOME` (`$HOME/.cache`) | `$HOME/Library/Caches`
 
 Inspired by [`configdir`](https://github.com/shibukawa/configdir).
