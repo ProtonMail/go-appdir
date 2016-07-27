@@ -1,5 +1,7 @@
 # go-appdir
 
+[![GoDoc](https://godoc.org/github.com/ProtonMail/go-appdir?status.svg)](https://godoc.org/github.com/ProtonMail/go-appdir)
+
 Minimalistic Go package to get application directories such as config and cache.
 
 Platform | Windows | [Linux/BSDs](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) | macOS
