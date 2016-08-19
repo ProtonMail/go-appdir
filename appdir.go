@@ -7,6 +7,8 @@ type Dirs interface {
 	UserConfig() string
 	// Get the user-specific cache directory.
 	UserCache() string
+	// Get the user-specific logs directory.
+	UserLogs() string
 }
 
 // New creates a new App with the provided name.

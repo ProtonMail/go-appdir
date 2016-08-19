@@ -16,3 +16,7 @@ func (d *dirs) UserConfig() string {
 func (d *dirs) UserCache() string {
 	return filepath.Join(os.Getenv("HOME"), "Library", "Caches", d.name)
 }
+
+func (d *dirs) UserLogs() string {
+	return filepath.Join(os.Getenv("HOME"), "Library", "Logs", d.name)
+}

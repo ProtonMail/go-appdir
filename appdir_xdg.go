@@ -26,3 +26,11 @@ func (d *dirs) UserCache() string {
 
 	return filepath.Join(os.Getenv("HOME"), ".cache", d.name)
 }
+
+func (d *dirs) UserLogs() string {
+	if os.Getenv("XDG_STATE_HOME") != "" {
+		return os.Getenv("XDG_STATE_HOME")
+	}
+
+	return filepath.Join(os.Getenv("HOME"), ".local", "state", d.name)
+}
