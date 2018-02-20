@@ -12,25 +12,28 @@ type dirs struct {
 }
 
 func (d *dirs) UserConfig() string {
+	baseDir := filepath.Join(os.Getenv("HOME"), ".config")
 	if os.Getenv("XDG_CONFIG_HOME") != "" {
-		return os.Getenv("XDG_CONFIG_HOME")
+		baseDir = os.Getenv("XDG_CONFIG_HOME")
 	}
 
-	return filepath.Join(os.Getenv("HOME"), ".config", d.name)
+	return filepath.Join(baseDir, d.name)
 }
 
 func (d *dirs) UserCache() string {
+	baseDir := filepath.Join(os.Getenv("HOME"), ".cache")
 	if os.Getenv("XDG_CACHE_HOME") != "" {
-		return os.Getenv("XDG_CACHE_HOME")
+		baseDir = os.Getenv("XDG_CACHE_HOME")
 	}
 
-	return filepath.Join(os.Getenv("HOME"), ".cache", d.name)
+	return filepath.Join(baseDir, d.name)
 }
 
 func (d *dirs) UserLogs() string {
+	baseDir := filepath.Join(os.Getenv("HOME"), ".local", "state")
 	if os.Getenv("XDG_STATE_HOME") != "" {
-		return os.Getenv("XDG_STATE_HOME")
+		baseDir = os.Getenv("XDG_STATE_HOME")
 	}
 
-	return filepath.Join(os.Getenv("HOME"), ".local", "state", d.name)
+	return filepath.Join(baseDir, d.name)
 }
