@@ -9,6 +9,7 @@ Platform | Windows | [Linux/BSDs](https://specifications.freedesktop.org/basedir
 User-specific config | `%APPDATA%` (`C:\Users\%USERNAME%\AppData\Roaming`) | `$XDG_CONFIG_HOME` (`$HOME/.config`) | `$HOME/Library/Application Support`
 User-specific cache | `%LOCALAPPDATA%` (`C:\Users\%USERNAME%\AppData\Local`) | `$XDG_CACHE_HOME` (`$HOME/.cache`) | `$HOME/Library/Caches`
 User-specific logs | `%LOCALAPPDATA%` (`C:\Users\%USERNAME%\AppData\Local`) | `$XDG_STATE_HOME` (`$HOME/.local/state`) | `$HOME/Library/Logs`
+User-specific data | `%LOCALAPPDATA%` (`C:\Users\%USERNAME%\AppData\Local`) | `$XDG_DATA_HOME` (`$HOME/.local/share`) | `$HOME/Library/Application Support`
 
 Inspired by [`configdir`](https://github.com/shibukawa/configdir).
 

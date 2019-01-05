@@ -20,3 +20,7 @@ func (d *dirs) UserCache() string {
 func (d *dirs) UserLogs() string {
 	return filepath.Join(os.Getenv("LOCALAPPDATA"), d.name)
 }
+
+func (d *dirs) UserData() string {
+	return filepath.Join(os.Getenv("LOCALAPPDATA"), d.name)
+}

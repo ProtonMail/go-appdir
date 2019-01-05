@@ -37,3 +37,12 @@ func (d *dirs) UserLogs() string {
 
 	return filepath.Join(baseDir, d.name)
 }
+
+func (d *dirs) UserData() string {
+	baseDir := filepath.Join(os.Getenv("HOME"), ".local", "share")
+	if os.Getenv("XDG_DATA_HOME") != "" {
+		baseDir = os.Getenv("XDG_DATA_HOME")
+	}
+
+	return filepath.Join(baseDir, d.name)
+}
