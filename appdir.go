@@ -9,6 +9,8 @@ type Dirs interface {
 	UserCache() string
 	// Get the user-specific logs directory.
 	UserLogs() string
+	// Get the user-specific data directory.
+	UserData() string
 }
 
 // New creates a new App with the provided name.
