@@ -95,23 +95,23 @@ func TestUserLogs(t *testing.T) {
 	}{
 		{
 			name:     "default logs directory",
-			expected: "/home/user/.local/state/app",
+			expected: "/home/user/.cache/app/logs",
 		},
 		{
-			name:          "logs directory set to absolute",
-			overrideValue: "/logs",
-			expected:      "/logs/app",
+			name:          "cache directory set to absolute",
+			overrideValue: "/cache",
+			expected:      "/cache/app/logs",
 		},
 		{
-			name:          "logs directory set to relative",
-			overrideValue: "logs",
-			expected:      "logs/app",
+			name:          "cache directory set to relative",
+			overrideValue: "cache",
+			expected:      "cache/app/logs",
 		},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			d := dirs{name: "app"}
 
-			if err := os.Setenv("XDG_STATE_HOME", tc.overrideValue); err != nil {
+			if err := os.Setenv("XDG_CACHE_HOME", tc.overrideValue); err != nil {
 				panic(err)
 			}
 
