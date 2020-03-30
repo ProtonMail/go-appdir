@@ -29,15 +29,6 @@ func (d *dirs) UserCache() string {
 	return filepath.Join(baseDir, d.name)
 }
 
-func (d *dirs) UserLogs() string {
-	baseDir := os.Getenv("XDG_STATE_HOME")
-	if baseDir == "" {
-		baseDir = filepath.Join(os.Getenv("HOME"), ".local", "state")
-	}
-
-	return filepath.Join(baseDir, d.name)
-}
-
 func (d *dirs) UserData() string {
 	baseDir := os.Getenv("XDG_DATA_HOME")
 	if baseDir == "" {
@@ -45,4 +36,8 @@ func (d *dirs) UserData() string {
 	}
 
 	return filepath.Join(baseDir, d.name)
+}
+
+func (d *dirs) UserLogs() string {
+	return filepath.Join(d.UserCache(), "logs")
 }
